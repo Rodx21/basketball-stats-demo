@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-court-950: #05070d;
+  --color-court-900: #0b1020;
+  --color-court-800: #131a2e;
+  --color-court-700: #1c2540;
+  --color-brand-blue: #1746a2;
+  --color-brand-blue-600: #123a86;
+  --color-brand-gold: #f2b705;
+  --color-brand-gold-600: #c99404;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+}
+
+body {
+  background: var(--color-court-950);
+  color: #f5f6fa;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Flattens the dark theme to plain black-on-white for anything printed (a box score
+ * saved as PDF, a game report handed to the club) — individual elements can still opt
+ * out of the printout entirely with the print:hidden utility. */
+@media print {
+  * {
+    color: #000 !important;
+    background: #fff !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
